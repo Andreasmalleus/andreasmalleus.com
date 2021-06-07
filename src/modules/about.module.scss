@@ -1,0 +1,20 @@
+@import "../utils/variables";
+
+.profile{
+  display: flex;
+  align-items: center;
+
+  img{
+    width: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 5px 10px 15px lightgray;
+  }
+
+  div{
+    font-size: 14px;
+    color: $primary-color;
+  }
+}
+  
+  
