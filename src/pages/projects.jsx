@@ -1,39 +1,47 @@
 import React from "react";
 import Layout from "../components/layout";
+import { graphql, Link } from "gatsby";
+import { useState } from "react";
+import { GatsbyImage, getImage  } from "gatsby-plugin-image"
 import dateFormat from "dateformat";
 import * as projectsStyles from "../modules/projects.module.scss"; 
 
-const Projects = () => {
+const Projects = ({data}) => {
 
-	const projects = [
-    {
-      name : "test",
-      language : "test",   
-      created_at : "12"   
-    },
-    {
-      name : "test",
-      language : "test",    
-      created_at : "12"    
-    }
-  ];
+	const [category, setCategory] = useState("all")
+
+	const projects = data.allMarkdownRemark.edges;
+
+	const sortProjects = (language) => {
+		setCategory(language)
+	}
 
 	return (
-		<Layout pageNr={"00"} title={"Projects"}>
+		<Layout pageNr={"00"} title={"Projects"} sortProjects={sortProjects}>
 			<div className={projectsStyles.projects}>
 				{
-          projects.map((project, index) => {
-            return (
-              <Project key={index} index={index} length={projects.length} {...project}/>
-            )
-          })
+				category !== "all"
+				?
+				projects.filter(_ => _.node.frontmatter.language.toLowerCase() === category.toLowerCase()).map((project, index) => {
+					return (
+						<Project key={index} index={index} length={projects.length} {...project.node.frontmatter}/>
+					)
+				})
+				:
+				projects.map((project, index) => {
+					return (
+						<Project key={index} index={index} length={projects.length} {...project.node.frontmatter}/>
+					)
+				})
 				}
 			</div>  
 		</Layout>
 	)
 }
 
-const Project = ({index, length, name, language, created_at}) => {
+const Project = ({index, length, name, language, created_at, image}) => {
+
+	const img = getImage(image)
 
 	return (
 		<div className={projectsStyles.project}>
@@ -41,8 +49,35 @@ const Project = ({index, length, name, language, created_at}) => {
 			<div>{name}</div>
 			<div>{language}</div>
 			<div>{dateFormat(created_at, "mmmm yyyy")}</div>
+			<Link to={name.toLowerCase()}>
+				<GatsbyImage image={img} alt={name} className={projectsStyles.image}/>
+			</Link>
 		</div>
 	)
 }
+
+export const query = graphql`
+	query ProjectsQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            id
+            name
+            language
+            created_at
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  width:300
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Projects;

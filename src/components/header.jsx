@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as headerStyles from "../modules/header.module.scss"
 
-const Header = ({title}) => {
+const Header = ({title, sortProjects}) => {
 
 	const [showPages, setShowPages] = useState(false);
 
@@ -33,19 +33,39 @@ const Header = ({title}) => {
 			null
 			:
 			<div className={headerStyles.categories}>
-				<div>
+				<div 
+					onClick={() => sortProjects("all")} 
+					role="button" 
+					tabIndex={0}
+					onKeyDown={() => sortProjects("all")}
+				>
 					All
 				</div>
 				<span> / </span>
-				<div>
+				<div 
+					onClick={() => sortProjects("javascript")} 
+					role="button" 
+					tabIndex={0}
+					onKeyDown={() => sortProjects("javascript")}
+				>
 					JavaScript
 				</div>
 				<span> / </span>
-				<div>
+				<div 
+					onClick={() => sortProjects("typescript")} 
+					role="button" 
+					tabIndex={0}
+					onKeyDown={() => sortProjects("typescript")}
+				>
 					TypeScript
 				</div>
 				<span> / </span>
-				<div>
+				<div 
+					onClick={() => sortProjects("HTML")} 
+					role="button" 
+					tabIndex={0}
+					onKeyDown={() => sortProjects("HTML")}
+				>
 					HTML
 				</div>
 			</div>
