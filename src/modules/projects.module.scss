@@ -1,0 +1,23 @@
+@import "../utils/variables";
+
+.projects{
+	width: fit-content;
+
+	.project{
+
+		color: $primary-color;
+        font-size: 13px;
+        
+		.index{
+			font-size: 12px;
+		}
+
+        div{
+            margin-bottom: 6px;
+        }
+	
+		.image{
+			margin-bottom: 80px;
+		}
+    }
+}

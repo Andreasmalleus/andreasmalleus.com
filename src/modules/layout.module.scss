@@ -1,0 +1,20 @@
+@import "../utils/variables";
+
+.page{
+    .container{
+      width: 100%;
+      display: flex;
+  
+      .pageNumber{
+        margin-left: 35px;
+        width: 25%;
+        font-size: 40px;
+        color: $secondary-color;
+      }
+  
+      .content{
+        width: 75%;
+        margin-right: 35px;
+      }
+    }
+  }
