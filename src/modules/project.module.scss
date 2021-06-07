@@ -1,0 +1,21 @@
+@import "../utils/variables";
+
+.project{
+
+    color: $primary-color;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    .projectInfo{
+
+        div{
+            margin-bottom: 6px;
+        }
+
+        a{
+            color: $primary-color;
+        }
+    }
+}
+  
