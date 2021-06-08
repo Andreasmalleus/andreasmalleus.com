@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import * as headerStyles from "../modules/header.module.scss"
+import { navigate } from "gatsby";
 
 const Header = ({title, sortProjects}) => {
 
-	const [showPages, setShowPages] = useState(false);
+  const [showPages, setShowPages] = useState(false);
+  
+  const pages= ["coronavirus-statistics", "react-messenger", "insta-clone", "typeform-clone"];
+
+  const navigateToProject = (isNext) => {
+    if(isNext){
+      navigate(`/projects/${pages[pages.indexOf(title) + 1]}`)
+    }else{
+      navigate(`/projects/${pages[pages.indexOf(title) -1]}`)
+    }
+  }
 
 	return (
 	<div 
@@ -28,10 +39,9 @@ const Header = ({title, sortProjects}) => {
 			<div className={headerStyles.title}>
 				{showPages ? "" : title}
 			</div>
-			{title !== "Projects"
+      {
+      title === "Projects"
 			? 
-			null
-			:
 			<div className={headerStyles.categories}>
 				<div 
 					onClick={() => sortProjects("all")} 
@@ -69,6 +79,38 @@ const Header = ({title, sortProjects}) => {
 					HTML
 				</div>
 			</div>
+      : title === "About" ?
+        null
+      //On project page
+      : <div className={headerStyles.navigators}>
+        {
+          pages[0] !== title ?
+          <div 
+            onClick={() => navigateToProject(false)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={() => navigateToProject(false)}
+          >
+            Previous
+          </div>
+          : null
+        } 
+        {
+          pages[0] !== title && pages[pages.length - 1] !== title ?
+           <span> / </span> 
+          : null
+        }
+        {
+          pages[pages.length - 1] !== title ?
+            <div 
+              onClick={() => navigateToProject(true)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={() => navigateToProject(true)}
+            >Next</div>
+          : null
+        }
+      </div>
 			}
 		</div>
 	</div>
