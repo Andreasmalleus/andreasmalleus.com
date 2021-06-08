@@ -8,3 +8,10 @@ size: 8452
 language: "HTML"
 image: "../images/typeform-clone.png"
 ---
+
+Typeform-clone is a clone of the website typeform. It is a complete copy of the client side
+
+## Built with
+
+- [Jekyll](https://jekyllrb.com/)
+- [Tailwind](https://tailwindcss.com/)

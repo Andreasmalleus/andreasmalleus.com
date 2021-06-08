@@ -7,7 +7,8 @@ import dateFormat from "dateformat";
 
 const Project = ({data}) => { 
 
-  const {name, language, created_at, image, html_url, description} = data.markdownRemark.frontmatter;
+  const {name, language, created_at, image, html_url} = data.markdownRemark.frontmatter;
+  const html = data.markdownRemark.html;
   const img = getImage(image);
 
   return (
@@ -16,8 +17,8 @@ const Project = ({data}) => {
         <div className={projectStyles.projectInfo}>
           <div>{language}</div>
           <div>{dateFormat(created_at, "mmmm yyyy")}</div>
-          <div>{description}</div>
           <a href={html_url}>Github link</a>
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
         <GatsbyImage image={img} alt={name}/>
       </div>
@@ -28,6 +29,7 @@ const Project = ({data}) => {
 export const query = graphql`
   query ProjectQuery($name: String!) {
     markdownRemark(frontmatter: {name: {eq: $name}}) {
+      html
       frontmatter {
         name
         language
