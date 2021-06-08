@@ -25,6 +25,7 @@ const Header = ({title, sortProjects}) => {
 		<div className={headerStyles.menu}>
 			{showPages ? 
 				<div className={headerStyles.links}>
+          <a href="/">Main</a>
 					<a href="/projects">Projects</a>
 					<a href="/about">About</a>
 					<a href="https://github.com/Andreasmalleus">Github</a>
