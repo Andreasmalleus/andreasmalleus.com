@@ -1,13 +1,17 @@
-$font-stack: 'Graphic web';
 $primary-color: #666666;
-$secondary-color: #86838E;
+$secondary-color: #adadad;  
+
+@font-face {
+  font-family: 'Graphik';
+  src: url(./fonts/Graphik-Regular.ttf) format('truetype');
+}
 
 html, body, #___gatsby, #gatsby-focus-wrapper {
   margin: 0px;
   padding: 0px;
-  font: 100% $font-stack;
   width: 100%;
   height: 100%;
+  font-family: 'Graphik', Arial, Helvetica, sans-serif;
 }
 
 .container{

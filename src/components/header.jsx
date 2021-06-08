@@ -32,7 +32,7 @@ const Header = ({title, sortProjects}) => {
 				</div>
 				:
 				<div>
-					Andreasmalleus
+					andreasmalleus
 				</div>
 			}
 		</div>
