@@ -9,9 +9,9 @@ language: "HTML"
 image: "../images/typeform-clone.png"
 ---
 
-Typeform-clone is a clone of the website typeform. It is a complete copy of the client side
+Typeform-clone is a clone of the website typeform. It is almost a complete copy of the client side code of the website. The purpose of making this clone was that it was one of the assignements in a course in my university.
 
-## Built with
+Built with  
 
-- [Jekyll](https://jekyllrb.com/)
-- [Tailwind](https://tailwindcss.com/)
+[Jekyll](https://jekyllrb.com/)  
+[Tailwind](https://tailwindcss.com/)  
