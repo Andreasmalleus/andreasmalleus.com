@@ -7,7 +7,9 @@ const Layout = ({children, pageNr, title, sortProjects}) => {
     <div className={layoutStyles.page}>
       <Header title={title} sortProjects={sortProjects}/>
       <div className={layoutStyles.container}>
-        <div className={layoutStyles.pageNumber}>{pageNr}</div>
+        <div className={layoutStyles.spacing}>
+          <div className={layoutStyles.pageNumber}>{pageNr}</div>
+        </div>
         <div className={layoutStyles.content}>
           {children}
         </div>
