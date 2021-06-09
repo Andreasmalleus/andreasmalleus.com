@@ -22,5 +22,14 @@
       line-height: 1.8;
     }
   }
+
+  .image{
+    transition: opacity 1s; 
+    cursor: pointer;
+
+    &:hover{
+      opacity: 0.75;
+    }
+  }
 }
   

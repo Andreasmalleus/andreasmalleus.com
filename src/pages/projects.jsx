@@ -50,7 +50,7 @@ const Project = ({index, length, name, language, created_at, image}) => {
 			<div>{language}</div>
 			<div>{dateFormat(created_at, "mmmm yyyy")}</div>
 			<Link to={name.toLowerCase()}>
-				<GatsbyImage image={img} alt={name}/>
+				<GatsbyImage image={img} alt={name} className={projectsStyles.image}/>
 			</Link>
 		</div>
 	)
@@ -69,7 +69,7 @@ export const query = graphql`
             image {
               childImageSharp {
                 gatsbyImageData(
-                  width:300
+                  width: 200
                 )
               }
             }

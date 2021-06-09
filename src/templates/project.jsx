@@ -20,7 +20,7 @@ const Project = ({data}) => {
           <a href={html_url}>GitHub link</a>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
-        <GatsbyImage image={img} alt={name}/>
+        <GatsbyImage image={img} alt={name} className={projectStyles.image}/>
       </div>
     </Layout> 
   )
