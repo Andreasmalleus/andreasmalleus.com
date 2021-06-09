@@ -17,7 +17,7 @@ const Project = ({data}) => {
         <div className={projectStyles.projectInfo}>
           <div>{language}</div>
           <div>{dateFormat(created_at, "mmmm yyyy")}</div>
-          <a href={html_url}>Github link</a>
+          <a href={html_url}>GitHub link</a>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
         <GatsbyImage image={img} alt={name}/>

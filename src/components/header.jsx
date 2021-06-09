@@ -28,7 +28,7 @@ const Header = ({title, sortProjects}) => {
           <a href="/">Main</a>
 					<a href="/projects">Projects</a>
 					<a href="/about">About</a>
-					<a href="https://github.com/Andreasmalleus">Github</a>
+					<a href="https://github.com/Andreasmalleus">GitHub</a>
 				</div>
 				:
 				<div>
