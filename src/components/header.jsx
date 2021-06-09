@@ -37,7 +37,7 @@ const Header = ({title, sortProjects}) => {
 			}
 		</div>
 		<div className={headerStyles.main}>
-			<div className={headerStyles.title}>
+			<div>
 				{showPages ? "" : title}
 			</div>
       {

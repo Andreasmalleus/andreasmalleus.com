@@ -5,19 +5,16 @@
 
 	.project{
 
-		color: $primary-color;
-        font-size: 13px;
+		color: $primary-font-color;
+    font-size: $primary-font-size;
+    margin-bottom: 80px;
         
 		.index{
-			font-size: 12px;
+			font-size: 11px;
 		}
 
-        div{
-            margin-bottom: 6px;
-        }
-	
-		.image{
-			margin-bottom: 80px;
-		}
+    div{
+        margin-bottom: 6px;
     }
+  }
 }

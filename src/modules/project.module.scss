@@ -2,25 +2,25 @@
 
 .project{
 
-    color: $primary-color;
-    font-size: 13px;
-    display: flex;
+  color: rgb(216, 210, 205);
+  font-size: $primary-font-size;
+  display: flex;
 
-    .projectInfo{
-      width: 25%;
-      margin-right: 25px;
+  .projectInfo{
+    width: 25%;
+    margin-right: 25px;
 
-        div{
-            margin-bottom: 6px;
-        }
-
-        a{
-            color: $primary-color;
-        }
-
-        p{
-          line-height: 1.8;
-        }
+    div{
+        margin-bottom: 6px;
     }
+
+    a{
+      color: $primary-font-color
+    }
+
+    p{
+      line-height: 1.8;
+    }
+  }
 }
   
