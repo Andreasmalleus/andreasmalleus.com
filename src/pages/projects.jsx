@@ -17,7 +17,7 @@ const Projects = ({data}) => {
 	}
 
 	return (
-		<Layout pageNr={"00"} title={"Projects"} sortProjects={sortProjects}>
+		<Layout pageNr={"00"} title={"projects"} sortProjects={sortProjects}>
 			<div className={projectsStyles.projects}>
 				{
 				category !== "all"
@@ -50,7 +50,7 @@ const Project = ({index, length, name, language, created_at, image}) => {
 			<div>{language}</div>
 			<div>{dateFormat(created_at, "mmmm yyyy")}</div>
 			<Link to={name.toLowerCase()}>
-				<GatsbyImage image={img} alt={name} className={projectsStyles.image}/>
+				<GatsbyImage image={img} alt={name}/>
 			</Link>
 		</div>
 	)

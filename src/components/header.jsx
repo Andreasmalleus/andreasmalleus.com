@@ -23,25 +23,25 @@ const Header = ({title, sortProjects}) => {
 		onMouseLeave={() => setShowPages(false)} 
 	>
 		<div className={headerStyles.menu}>
-			{showPages ? 
-				<div className={headerStyles.links}>
-          <a href="/">Main</a>
-					<a href="/projects">Projects</a>
-					<a href="/about">About</a>
-					<a href="https://github.com/Andreasmalleus">GitHub</a>
+        <div className={headerStyles.links} style={ showPages ? {opacity : '1', visibility: 'visible'} : {opacity : '0', visibility: 'hidden'}}>
+          <a href="/">main</a>
+          <span> \ </span>
+					<a href="/projects">projects</a>
+          <span> \ </span>
+					<a href="/about">about</a>
+          <span> \ </span>
+					<a href="https://github.com/Andreasmalleus">github</a>
 				</div>
-				:
-				<div>
+				<div className={headerStyles.title} style={ showPages ? {opacity : '0', visibility: 'hidden'} : {opacity : '1', visibility: 'visible'}}>
 					andreasmalleus
 				</div>
-			}
 		</div>
 		<div className={headerStyles.main}>
-			<div>
-				{showPages ? "" : title}
+			<div className={headerStyles.subtitle} style={ showPages ? {opacity : '1'} : {opacity : '0'}}>
+				{title}
 			</div>
       {
-      title === "Projects"
+      title === "projects"
 			? 
 			<div className={headerStyles.categories}>
 				<div 
@@ -50,7 +50,7 @@ const Header = ({title, sortProjects}) => {
 					tabIndex={0}
 					onKeyDown={() => sortProjects("all")}
 				>
-					All
+					all
 				</div>
 				<span> / </span>
 				<div 
@@ -59,7 +59,7 @@ const Header = ({title, sortProjects}) => {
 					tabIndex={0}
 					onKeyDown={() => sortProjects("javascript")}
 				>
-					JavaScript
+					javascript
 				</div>
 				<span> / </span>
 				<div 
@@ -68,7 +68,7 @@ const Header = ({title, sortProjects}) => {
 					tabIndex={0}
 					onKeyDown={() => sortProjects("typescript")}
 				>
-					TypeScript
+					typescript
 				</div>
 				<span> / </span>
 				<div 
@@ -77,10 +77,10 @@ const Header = ({title, sortProjects}) => {
 					tabIndex={0}
 					onKeyDown={() => sortProjects("HTML")}
 				>
-					HTML
+					html
 				</div>
 			</div>
-      : title === "About" ?
+      : title === "about" ?
         null
       //On project page
       : <div className={headerStyles.navigators}>
@@ -92,7 +92,7 @@ const Header = ({title, sortProjects}) => {
             tabIndex={0}
             onKeyDown={() => navigateToProject(false)}
           >
-            Previous
+            previous
           </div>
           : null
         } 
@@ -108,7 +108,7 @@ const Header = ({title, sortProjects}) => {
               role="button"
               tabIndex={0}
               onKeyDown={() => navigateToProject(true)}
-            >Next</div>
+            >next</div>
           : null
         }
       </div>

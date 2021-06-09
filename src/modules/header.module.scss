@@ -11,6 +11,8 @@
     color: $primary-font-color;
     background-color: $secondary-color;
     letter-spacing: 1px;
+    position: relative;
+    transition: 2s;
     
     .menu{
       margin-left: 35px;
@@ -18,19 +20,29 @@
   
       .links{
         display: flex;
-        transition: 0.5s;
+        position: absolute;
+        transition: opacity 1s, visibility 1s;
   
         a{
           text-decoration: none;
           color: $primary-font-color;
-          margin-right: 6px;
+          cursor: pointer;
+          transition: color 0.5s;
 
           &:hover {
             color: $secondary-font-color;
-            transition: 0.5s;
-            cursor: pointer;
           }
         }
+
+        span{
+          margin-right: 6px;
+          margin-left: 6px;
+          color: $primary-font-color;
+        }
+      }
+
+      .title{
+        transition: opacity 1s, visibility 1s;
       }
     }
   
@@ -38,9 +50,12 @@
       width: 75%;
       display: flex;
       margin-right: 35px;
-      justify-content: space-between;
+      justify-content: space-between;  
   
-  
+      .subtitle{
+        transition: opacity 1s;
+      }
+
       .categories{
         color: $primary-font-color;
         display: flex;
