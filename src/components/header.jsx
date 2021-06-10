@@ -104,38 +104,38 @@ const Header = ({title, sortProjects}) => {
               html
             </div>
           </div>
-          : title === "about" ?
-            null
-          //On project page
-          : <div className={headerStyles.navigators}>
-            {
-              pages[0] !== title ?
-              <div 
-                onClick={() => navigateToProject(false)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={() => navigateToProject(false)}
-              >
-                previous
-              </div>
-              : null
-            } 
-            {
-              pages[0] !== title && pages[pages.length - 1] !== title ?
-              <span> / </span> 
-              : null
-            }
-            {
-              pages[pages.length - 1] !== title ?
+          : pages.includes(title) ?
+            <div className={headerStyles.navigators}>
+              {
+                pages[0] !== title ?
                 <div 
-                  onClick={() => navigateToProject(true)}
+                  onClick={() => navigateToProject(false)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={() => navigateToProject(true)}
-                >next</div>
-              : null
-            }
-          </div>
+                  onKeyDown={() => navigateToProject(false)}
+                >
+                  previous
+                </div>
+                : null
+              } 
+              {
+                pages[0] !== title && pages[pages.length - 1] !== title ?
+                <span> / </span> 
+                : null
+              }
+              {
+                pages[pages.length - 1] !== title ?
+                  <div 
+                    onClick={() => navigateToProject(true)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={() => navigateToProject(true)}
+                  >next</div>
+                : null
+              }
+            </div>
+          //On project page
+          : null
           }
         </div>
       </div>
