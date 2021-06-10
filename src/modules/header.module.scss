@@ -28,7 +28,7 @@
       .links{
         display: flex;
         position: absolute;
-        transition: opacity 1s, visibility 1s;
+        transition: opacity 0.5s, visibility 0.5s;
   
         a{
           text-decoration: none;
@@ -49,7 +49,7 @@
       }
 
       .title{
-        transition: opacity 1s, visibility 1s;
+        transition: opacity 0.5s;
       }
     }
   
@@ -60,7 +60,7 @@
       justify-content: space-between;  
   
       .subtitle{
-        transition: opacity 1s;
+        transition: opacity 0.5s;
       }
 
       .categories{
