@@ -73,7 +73,7 @@ const Project = ({index, length, name, language, created_at, image}) => {
 
 export const query = graphql`
 	query ProjectsQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: frontmatter___created_at, order: DESC}) {
       edges {
         node {
           frontmatter {
@@ -83,9 +83,7 @@ export const query = graphql`
             created_at
             image {
               childImageSharp {
-                gatsbyImageData(
-                  width: 200
-                )
+                gatsbyImageData(width: 200)
               }
             }
           }
