@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby";
 import { useState } from "react";
 import { GatsbyImage, getImage  } from "gatsby-plugin-image"
 import dateFormat from "dateformat";
-import * as projectsStyles from "../modules/projects.module.scss"; 
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const Projects = ({data}) => {
 
@@ -18,23 +18,38 @@ const Projects = ({data}) => {
 
 	return (
 		<Layout pageNr={"00"} title={"projects"} sortProjects={sortProjects}>
-			<div className={projectsStyles.projects}>
+      <TransitionGroup
+        className="projects"
+        component="Project"
+      >
 				{
 				category !== "all"
 				?
 				projects.filter(_ => _.node.frontmatter.language.toLowerCase() === category.toLowerCase()).map((project, index) => {
 					return (
-						<Project key={index} index={index} length={projects.length} {...project.node.frontmatter}/>
+            <CSSTransition
+              timeout={1000}
+              key={index}
+              classNames="project-transition"
+            >
+						  <Project index={index} length={projects.length} {...project.node.frontmatter}/>
+            </CSSTransition>
 					)
 				})
 				:
 				projects.map((project, index) => {
 					return (
-						<Project key={index} index={index} length={projects.length} {...project.node.frontmatter}/>
+						<CSSTransition
+              timeout={1000}
+              key={index}
+              classNames="project-transition"
+            >
+						  <Project index={index} length={projects.length} {...project.node.frontmatter}/>
+            </CSSTransition>
 					)
 				})
 				}
-			</div>  
+			</TransitionGroup>
 		</Layout>
 	)
 }
@@ -44,13 +59,13 @@ const Project = ({index, length, name, language, created_at, image}) => {
 	const img = getImage(image)
 
 	return (
-    <div className={projectsStyles.project}>
-      <div className={projectsStyles.index}>{length >= 10 ? index : "0" + index}</div>
+    <div className="projects-project">
+      <div className="index">{length >= 10 ? index : "0" + index}</div>
       <div>{name}</div>
       <div>{language}</div>
       <div>{dateFormat(created_at, "mmmm yyyy")}</div>
       <Link to={name.toLowerCase()}>
-        <GatsbyImage image={img} alt={name} className={projectsStyles.image}/>
+        <GatsbyImage image={img} alt={name} className="image"/>
       </Link>
   </div>
 	)

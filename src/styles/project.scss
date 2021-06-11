@@ -1,0 +1,53 @@
+@import "../utils/variables";
+
+.project{
+  color: rgb(216, 210, 205);
+  font-size: $primary-font-size;
+  display: flex;
+
+  .projectInfo{
+    width: 25%;
+    margin-right: 25px;
+
+    div{
+        margin-bottom: 6px;
+    }
+
+    a{
+      color: $primary-font-color
+    }
+
+    p{
+      line-height: 1.8;
+    }
+  }
+
+  .image{
+    transition: opacity 1s; 
+    cursor: pointer;
+
+    &:hover{
+      opacity: 0.75;
+    }
+  }
+}
+
+.modal-transition-enter {
+  /*We give the list the initial dimension of the list button*/
+  opacity: 0;
+}
+/* This is where we can add the transition*/
+.modal-transition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+/* This fires as soon as the this.state.showList is false */
+.modal-transition-exit {
+  opacity: 1;
+}
+/* fires as element leaves the DOM*/
+.modal-transition-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}

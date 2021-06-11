@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import * as headerStyles from "../modules/header.module.scss"
 import { navigate } from "gatsby";
 import { useEffect } from "react";
 import { debounce} from "../utils/helpers";
@@ -38,16 +37,17 @@ const Header = ({title, sortProjects}) => {
   }, [prevScrollPos, visible, handleScroll]);
 
 	return (
-    <>
-      <div className={headerStyles.placeholder}></div>
+    <header>
+      <div className="placeholder"></div>
       <div 
-        className={headerStyles.header} 
+        className="header"
         onMouseOver={() => setShowPages(true)} 
         onMouseLeave={() => setShowPages(false)} 
         style={{ top: visible ? '0' : '-60px' }}
+        onFocus={() => setShowPages(false)} 
       >
-        <div className={headerStyles.menu}>
-            <div className={headerStyles.links} style={ showPages ? {opacity : '1', visibility: 'visible'} : {opacity : '0', visibility: 'hidden'}}>
+        <div className="menu">
+            <div className="links" style={ showPages ? {opacity : '1', visibility: 'visible'} : {opacity : '0', visibility: 'hidden'}}>
               <a href="/">main</a>
               <span> \ </span>
               <a href="/projects">projects</a>
@@ -56,18 +56,18 @@ const Header = ({title, sortProjects}) => {
               <span> \ </span>
               <a href="https://github.com/Andreasmalleus">github</a>
             </div>
-            <div className={headerStyles.title} style={ showPages ? {opacity : '0', visibility: 'hidden'} : {opacity : '1', visibility: 'visible'}}>
+            <div className={"title"} style={ showPages ? {opacity : '0', visibility: 'hidden'} : {opacity : '1', visibility: 'visible'}}>
               andreasmalleus
             </div>
         </div>
-        <div className={headerStyles.main}>
-          <div className={headerStyles.subtitle} style={ showPages ? {opacity : '1'} : {opacity : '0'}}>
+        <div className={"main"}>
+          <div className="subtitle" style={ showPages ? {opacity : '1'} : {opacity : '0'}}>
             {title}
           </div>
           {
           title === "projects"
           ? 
-          <div className={headerStyles.categories}>
+          <div className="categories">
             <div 
               onClick={() => sortProjects("all")} 
               role="button" 
@@ -105,7 +105,7 @@ const Header = ({title, sortProjects}) => {
             </div>
           </div>
           : pages.includes(title) ?
-            <div className={headerStyles.navigators}>
+            <div className="navigators">
               {
                 pages[0] !== title ?
                 <div 
@@ -139,7 +139,7 @@ const Header = ({title, sortProjects}) => {
           }
         </div>
       </div>
-    </>
+    </header>
 	)
 }
 

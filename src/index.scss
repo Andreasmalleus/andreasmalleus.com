@@ -1,4 +1,11 @@
 @import "./utils/variables";
+@import "./styles/404.scss";
+@import "./styles/about.scss";
+@import "./styles/header.scss";
+@import "./styles/layout.scss";
+@import "./styles/modal.scss";
+@import "./styles/project.scss";
+@import "./styles/projects.scss";
 
 @font-face {
   font-family: 'Graphik';
@@ -14,7 +21,12 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
   background-color: $primary-color;
 }
 
-.container{
+body{
+  overflow: auto;
+  overflow: overlay;
+}
+
+.hero-container{
   position: relative;
   width: 100%;
   height: 100%;
@@ -25,14 +37,14 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
   }
   
-  .content{
+  .hero-content{
     height: 100%;
     position: absolute;
     left: 25%;
     top: 5%;
     color: whitesmoke;
 
-    .spacing{
+    .hero-spacing{
       height: 5%;
     }
 
@@ -41,5 +53,13 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
       letter-spacing: 4px;
     }
   }
+}
 
+.hero-image-transition-enter{
+  opacity: 0;
+}
+
+.hero-image-transition-enter-active{
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }

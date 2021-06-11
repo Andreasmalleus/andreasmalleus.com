@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./header";
-import * as layoutStyles from "../modules/layout.module.scss";
 import PageTransition from "gatsby-plugin-page-transitions";
 
 const Layout = ({children, pageNr, title, sortProjects}) => {
@@ -8,17 +7,17 @@ const Layout = ({children, pageNr, title, sortProjects}) => {
     <PageTransition
       duration={1000}
     >
-      <div className={layoutStyles.page}>
+      <main>
         <Header title={title} sortProjects={sortProjects}/>
-        <div className={layoutStyles.container}>
-          <div className={layoutStyles.spacing}>
-            <div className={layoutStyles.pageNumber}>{pageNr}</div>
+        <div className="layout-container">
+          <div className="layout-spacing">
+            <div className="layout-pageNumber">{pageNr}</div>
           </div>
-          <div className={layoutStyles.content}>
+          <div className="content">
             {children}
           </div>
         </div>
-      </div> 
+      </main> 
     </PageTransition>
   )
 }

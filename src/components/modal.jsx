@@ -1,19 +1,20 @@
 import React from "react";
 import { CgClose } from "react-icons/cg/index.esm";
-import * as modalStyles from "../modules/modal.module.scss";
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const Modal = ({image, alt , isOpen, trigger}) => {
+const Modal = ({image, alt , isOpen, setOpenModal}) => {
 
   return (
     <div 
-      className={modalStyles.modal} 
-      style={isOpen ? {display: "block"} : {display : "none"}} 
-      onClick={() => trigger(!isOpen)}
+      className="modal"
+      onClick={() => setOpenModal(!isOpen)}
+      role="button" 
+      tabIndex={0}
+      onKeyDown={() => setOpenModal(!isOpen)}
     >
-      <div className={modalStyles.modalContent}>
-        <GatsbyImage image={image} alt={alt} className={modalStyles.modalImage}/>
-        <CgClose className={modalStyles.close} size={"20px"}/>
+      <div className="modal-content">
+        <GatsbyImage image={image} alt={alt} className="image"/>
+        <CgClose className="close" size={"20px"}/>
       </div>
     </div>
   )

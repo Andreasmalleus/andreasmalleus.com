@@ -1,12 +1,13 @@
 @import "../utils/variables";
 
 .projects{
-	width: fit-content;
 
-	.project{
+	.projects-project{
 		color: $primary-font-color;
     font-size: $primary-font-size;
     margin-bottom: 80px;
+    width: fit-content;
+
         
 		.index{
 			font-size: 11px;
@@ -25,4 +26,19 @@
       }
     }
   }
+}
+
+.project-transition-enter {
+  opacity: 0;
+}
+.project-transition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.project-transition-exit {
+  opacity: 1;
+}
+.project-transition-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
 }
