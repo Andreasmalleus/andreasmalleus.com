@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./header";
 import PageTransition from "gatsby-plugin-page-transitions";
+import "../styles/layout.scss";
 
 const Layout = ({children, pageNr, title, sortProjects}) => {
   return (

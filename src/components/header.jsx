@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useEffect } from "react";
 import { debounce} from "../utils/helpers";
+import "../styles/header.scss";
 
 const Header = ({title, sortProjects}) => {
 
@@ -44,7 +45,6 @@ const Header = ({title, sortProjects}) => {
         onMouseOver={() => setShowPages(true)} 
         onMouseLeave={() => setShowPages(false)} 
         style={{ top: visible ? '0' : '-60px' }}
-        onFocus={() => setShowPages(false)} 
       >
         <div className="menu">
             <div className="links" style={ showPages ? {opacity : '1', visibility: 'visible'} : {opacity : '0', visibility: 'hidden'}}>

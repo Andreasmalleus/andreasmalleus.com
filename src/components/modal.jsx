@@ -1,6 +1,7 @@
 import React from "react";
 import { CgClose } from "react-icons/cg/index.esm";
 import { GatsbyImage } from "gatsby-plugin-image"
+import "../styles/modal.scss";
 
 const Modal = ({image, alt , isOpen, setOpenModal}) => {
 

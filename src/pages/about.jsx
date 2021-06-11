@@ -1,6 +1,8 @@
 import * as React from "react"
 import Layout from "../components/layout";
 import AboutImage from "../assets/profile.png";
+import "../styles/about.scss";
+
 const About = () => {
 
   return (
