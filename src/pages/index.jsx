@@ -1,10 +1,10 @@
 import * as React from "react"
 import "../index.scss";
-import Hero from "../assets/hero.png"
 import { useEffect } from "react";
 import { navigate } from "gatsby";
 import {CSSTransition} from "react-transition-group";
 import { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Index = () => {
 
@@ -33,7 +33,7 @@ const Index = () => {
           <div className="hero-spacing"></div>
           <div>personal portfolio</div>
         </div>  
-        <img src={Hero} alt=""/>
+        <StaticImage src={"../assets/hero.png"} alt="" class="hero-image" layout="fullWidth" quality={100}/>
       </div>      
     </CSSTransition>
 
