@@ -22,7 +22,7 @@
     }
   }
 
-  .image{
+  .project-image{
     transition: opacity 1s; 
     cursor: pointer;
 
@@ -50,4 +50,25 @@
 .modal-transition-exit-active {
   opacity: 0;
   transition: opacity 500ms;
+}
+
+@media screen and (max-width: 480px) {
+  .project{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .project{
+    
+    .projectInfo{
+      width: 60%;
+    }
+  }
 }
