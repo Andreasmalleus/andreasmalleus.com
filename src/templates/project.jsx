@@ -23,7 +23,13 @@ const Project = ({data}) => {
           <a href={html_url}>GitHub link</a>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
-        <GatsbyImage image={img} alt={name} className="image" onClick={() => setOpenModal(!openModal)}/>
+        <GatsbyImage 
+          image={img} 
+          alt={name} 
+          className="project-image" 
+          onClick={() => setOpenModal(!openModal)}
+          objectFit='contain'
+        />
       </div>
       <CSSTransition
         timeout={500}
@@ -57,6 +63,5 @@ export const query = graphql`
 }
 
 ` 
-
 
 export default Project;
