@@ -6,101 +6,137 @@
 }
 
 .header{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    justify-content: space-between;
-    font-size: $primary-font-size;
-    color: $primary-font-color;
-    background-color: $secondary-color;
-    letter-spacing: 1px;
-    top: 0;
-    position: fixed;
-    transition: 0.5s;
-    z-index: 2;
-    
-    .menu{
-      margin-left: 35px;
-      width: 25%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  background-color: $secondary-color;
+  letter-spacing: 1px;
+  top: 0;
+  position: fixed;
+  transition: 0.5s;
+  z-index: 2;
   
-      .links{
-        display: flex;
-        position: absolute;
-        transition: opacity 0.5s, visibility 0.5s;
-  
-        a{
-          text-decoration: none;
-          color: $primary-font-color;
-          cursor: pointer;
-          transition: color 0.5s;
+  .menu{
+    margin-left: 35px;
+    width: 25%;
 
-          &:hover {
-            color: $secondary-font-color;
-          }
-        }
+    .links{
+      display: flex;
+      position: absolute;
+      transition: opacity 0.5s, visibility 0.5s;
 
-        span{
-          margin-right: 6px;
-          margin-left: 6px;
-          color: $primary-font-color;
+      a{
+        text-decoration: none;
+        color: $primary-font-color;
+        cursor: pointer;
+        transition: color 0.5s;
+
+        &:hover {
+          color: $secondary-font-color;
         }
       }
 
-      .title{
-        transition: opacity 0.5s;
+      span{
+        margin-right: 6px;
+        margin-left: 6px;
+        color: $primary-font-color;
       }
     }
-  
-    .main{
-      width: 75%;
+
+    .title{
+      transition: opacity 0.5s;
+    }
+  }
+
+  .main{
+    width: 75%;
+    display: flex;
+    margin-right: 35px;
+    justify-content: space-between;  
+
+    .subtitle{
+      transition: opacity 0.5s;
+    }
+
+    .categories{
+      color: $primary-font-color;
       display: flex;
-      margin-right: 35px;
-      justify-content: space-between;  
-  
-      .subtitle{
-        transition: opacity 0.5s;
+
+      span{
+        margin-right: 6px;
+        margin-left: 6px;
       }
+
+      div{
+        color: $primary-font-color;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          color: $secondary-font-color;
+        }
+      }
+    }
+    
+    .navigators{
+      display: flex;
+
+      span{
+        margin-right: 6px;
+        margin-left: 6px;
+        color: $primary-font-color;
+      }
+
+      div{
+        color: $primary-font-color;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          color: $secondary-font-color;
+        }
+      }
+    }
+  } 
+}
+@media screen and (max-width: 480px) {
+  .header{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header{
+    .main{
+      justify-content: flex-end;
 
       .categories{
-        color: $primary-font-color;
-        display: flex;
-  
-        span{
-          margin-right: 6px;
-          margin-left: 6px;
-        }
-  
-        div{
-          color: $primary-font-color;
-          transition: 0.5s;
-          cursor: pointer;
-  
-          &:hover {
-            color: $secondary-font-color;
-          }
-        }
+        display: none;
       }
-      
       .navigators{
-        display: flex;
-
-        span{
-          margin-right: 6px;
-          margin-left: 6px;
-          color: $primary-font-color;
-        }
-
-        div{
-          color: $primary-font-color;
-          transition: 0.5s;
-          cursor: pointer;
-  
-          &:hover {
-            color: $secondary-font-color;
-          }
-        }
+        display: none;
       }
     }
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .header{
+    .main{
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .header{
+    .menu{
+      width: 20%;
+    }
+  }
+}
