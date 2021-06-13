@@ -61,7 +61,7 @@ const Header = ({title, sortProjects}) => {
             </div>
         </div>
         <div className={"main"}>
-          <div className="subtitle" style={ showPages ? {opacity : '1'} : {opacity : '0'}}>
+          <div className="subtitle" style={ !showPages ? {opacity : '1'} : {opacity : '0'}}>
             {title}
           </div>
           {
