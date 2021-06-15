@@ -18,14 +18,14 @@ const SEO = ({ title, description }) => {
     }
   `);
 
-  const { defaultTitle, defaultDescription, siteUrl } = site.siteMetadatal;
+  const { defaultTitle, defaultDescription, siteUrl } = site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     url: `${siteUrl}${pathname}`,
   };
-
+  // TODO add twitter meta tags
   return (
     <Helmet>
       <title>{seo.title}</title>
