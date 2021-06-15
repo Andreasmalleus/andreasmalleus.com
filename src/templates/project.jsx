@@ -17,37 +17,36 @@ const Project = ({ data }) => {
 
   return (
     <Layout pageNr={"00"} title={name}>
-      <SEO title={name}>
-        <div className="project">
-          <div className="projectInfo">
-            <div>{language}</div>
-            <div>{dateFormat(created_at, "mmmm yyyy")}</div>
-            <a href={html_url}>GitHub link</a>
-            <div dangerouslySetInnerHTML={{ __html: html }}></div>
-          </div>
-          <GatsbyImage
-            image={img}
-            alt={name}
-            className="project-image"
-            onClick={() => setOpenModal(!openModal)}
-            objectFit="contain"
-          />
+      <SEO title={name} />
+      <div className="project">
+        <div className="projectInfo">
+          <div>{language}</div>
+          <div>{dateFormat(created_at, "mmmm yyyy")}</div>
+          <a href={html_url}>GitHub link</a>
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
-        <CSSTransition
-          timeout={500}
-          in={openModal}
-          classNames="modal-transition"
-          appear
-          unmountOnExit
-        >
-          <Modal
-            image={img}
-            alt={name}
-            isOpen={openModal}
-            setOpenModal={setOpenModal}
-          />
-        </CSSTransition>
-      </SEO>
+        <GatsbyImage
+          image={img}
+          alt={name}
+          className="project-image"
+          onClick={() => setOpenModal(!openModal)}
+          objectFit="contain"
+        />
+      </div>
+      <CSSTransition
+        timeout={500}
+        in={openModal}
+        classNames="modal-transition"
+        appear
+        unmountOnExit
+      >
+        <Modal
+          image={img}
+          alt={name}
+          isOpen={openModal}
+          setOpenModal={setOpenModal}
+        />
+      </CSSTransition>
     </Layout>
   );
 };

@@ -19,31 +19,16 @@ const Projects = ({ data }) => {
 
   return (
     <Layout pageNr={"00"} title={"projects"} sortProjects={sortProjects}>
-      <SEO title="Projects">
-        <TransitionGroup className="projects" component="Project">
-          {category !== "all"
-            ? projects
-                .filter(
-                  (_) =>
-                    _.node.frontmatter.language.toLowerCase() ===
-                    category.toLowerCase()
-                )
-                .map((project, index) => {
-                  return (
-                    <CSSTransition
-                      timeout={1000}
-                      key={index}
-                      classNames="project-transition"
-                    >
-                      <Project
-                        index={index}
-                        length={projects.length}
-                        {...project.node.frontmatter}
-                      />
-                    </CSSTransition>
-                  );
-                })
-            : projects.map((project, index) => {
+      <SEO title="Projects" />
+      <TransitionGroup className="projects" component="Project">
+        {category !== "all"
+          ? projects
+              .filter(
+                (_) =>
+                  _.node.frontmatter.language.toLowerCase() ===
+                  category.toLowerCase()
+              )
+              .map((project, index) => {
                 return (
                   <CSSTransition
                     timeout={1000}
@@ -57,9 +42,23 @@ const Projects = ({ data }) => {
                     />
                   </CSSTransition>
                 );
-              })}
-        </TransitionGroup>
-      </SEO>
+              })
+          : projects.map((project, index) => {
+              return (
+                <CSSTransition
+                  timeout={1000}
+                  key={index}
+                  classNames="project-transition"
+                >
+                  <Project
+                    index={index}
+                    length={projects.length}
+                    {...project.node.frontmatter}
+                  />
+                </CSSTransition>
+              );
+            })}
+      </TransitionGroup>
     </Layout>
   );
 };

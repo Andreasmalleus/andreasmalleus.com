@@ -7,18 +7,17 @@ import SEO from "../components/seo";
 const About = () => {
   return (
     <Layout pageNr={"01"} title="about">
-      <SEO title="About">
-        <div className="about">
-          <StaticImage
-            src={"../assets/profile.png"}
-            alt="A person looking up"
-            className="about-image"
-          />
-          <div>
-            Hey my name is Andreas Malleus and im an aspiring web developer
-          </div>
+      <SEO title="About" />
+      <div className="about">
+        <StaticImage
+          src={"../assets/profile.png"}
+          alt="A person looking up"
+          className="about-image"
+        />
+        <div>
+          Hey my name is Andreas Malleus and im an aspiring web developer
         </div>
-      </SEO>
+      </div>
     </Layout>
   );
 };
