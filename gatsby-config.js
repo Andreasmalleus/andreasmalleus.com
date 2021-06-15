@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Portfolio site",
+    title: "Andreas Malleus Portfolio",
+    description: "A personal portfolio",
+    url: "https://andreasmalleus.com",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -16,10 +18,11 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-plugin-page-transitions',
+      resolve: "gatsby-plugin-page-transitions",
       options: {
-        transitionTime: 500
-      }
-    }
+        transitionTime: 500,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
   ],
 };
