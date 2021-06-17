@@ -1,27 +1,27 @@
-exports.createPages = async ({actions, graphql}) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     {
       allMarkdownRemark {
         edges {
           node {
             frontmatter {
-              name
+              title
             }
           }
         }
       }
-    }    
-  `)
+    }
+  `);
 
-  data.allMarkdownRemark.edges.map(({node}) => {
-    const { name } = node.frontmatter;
+  data.allMarkdownRemark.edges.map(({ node }) => {
+    const { title } = node.frontmatter;
 
     actions.createPage({
-      path : `/projects/${name}`,
-      component : require.resolve("./src/templates/project.jsx"),
-      context : {
-        name : name
-      }
-    })
-  })
-}
+      path: `/projects/${title}`,
+      component: require.resolve("./src/templates/project.jsx"),
+      context: {
+        title: title,
+      },
+    });
+  });
+};

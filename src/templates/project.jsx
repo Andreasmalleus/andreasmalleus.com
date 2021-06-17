@@ -9,15 +9,15 @@ import "../styles/project.scss";
 import SEO from "../components/seo";
 
 const Project = ({ data }) => {
-  const { name, language, created_at, image, html_url } =
+  const { title, language, created_at, image, html_url } =
     data.markdownRemark.frontmatter;
   const html = data.markdownRemark.html;
   const img = getImage(image);
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <Layout pageNr={"00"} title={name}>
-      <SEO title={name} />
+    <Layout pageNr={"00"} title={title}>
+      <SEO title={title} />
       <div className="project">
         <div className="projectInfo">
           <div>{language}</div>
@@ -27,7 +27,7 @@ const Project = ({ data }) => {
         </div>
         <GatsbyImage
           image={img}
-          alt={name}
+          alt={title}
           className="project-image"
           onClick={() => setOpenModal(!openModal)}
           objectFit="contain"
@@ -42,7 +42,7 @@ const Project = ({ data }) => {
       >
         <Modal
           image={img}
-          alt={name}
+          alt={title}
           isOpen={openModal}
           setOpenModal={setOpenModal}
         />
@@ -52,11 +52,11 @@ const Project = ({ data }) => {
 };
 
 export const query = graphql`
-  query ProjectQuery($name: String!) {
-    markdownRemark(frontmatter: { name: { eq: $name } }) {
+  query ProjectQuery($title: String!) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
-        name
+        title
         language
         created_at
         html_url

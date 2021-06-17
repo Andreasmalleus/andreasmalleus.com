@@ -63,17 +63,17 @@ const Projects = ({ data }) => {
   );
 };
 
-const Project = ({ index, length, name, language, created_at, image }) => {
+const Project = ({ index, length, title, language, created_at, image }) => {
   const img = getImage(image);
 
   return (
     <div className="projects-project">
       <div className="index">{length >= 10 ? index : "0" + index}</div>
-      <div>{name}</div>
+      <div>{title}</div>
       <div>{language}</div>
       <div>{dateFormat(created_at, "mmmm yyyy")}</div>
-      <Link to={name.toLowerCase()}>
-        <GatsbyImage image={img} alt={name} className="image" />
+      <Link to={title.toLowerCase()}>
+        <GatsbyImage image={img} alt={title} className="image" />
       </Link>
     </div>
   );
@@ -86,7 +86,7 @@ export const query = graphql`
         node {
           frontmatter {
             id
-            name
+            title
             language
             created_at
             image {
