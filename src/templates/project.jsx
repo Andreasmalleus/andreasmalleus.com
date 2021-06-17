@@ -26,7 +26,6 @@ const Project = ({ data }) => {
           <a href={html_url}>GitHub link</a>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
-        <div style={{ color: "white" }}>{description}</div>
         <GatsbyImage
           image={img}
           alt={title}
