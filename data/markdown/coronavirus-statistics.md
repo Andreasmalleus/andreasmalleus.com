@@ -7,6 +7,7 @@ updated_at: "2020-12-19T14:47:23Z"
 size: 537
 language: "JavaScript"
 image: "../images/coronavirus-statistics.png"
+description: "What is coronavirus-statistics and why was it built?"
 ---
 
 Coronavirus-statistics is a project that was made for a course in my university. The whole idea behind this application is that it shows the statistics of every country in the world. It is also similar to application made by google.

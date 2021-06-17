@@ -19,7 +19,10 @@ const Projects = ({ data }) => {
 
   return (
     <Layout pageNr={"00"} title={"projects"} sortProjects={sortProjects}>
-      <SEO title="Projects" />
+      <SEO
+        title="Projects"
+        description="A list of projects that i have built"
+      />
       <TransitionGroup className="projects" component="Project">
         {category !== "all"
           ? projects
@@ -89,6 +92,7 @@ export const query = graphql`
             title
             language
             created_at
+            description
             image {
               childImageSharp {
                 gatsbyImageData(width: 200)

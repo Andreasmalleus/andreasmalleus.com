@@ -9,15 +9,16 @@ import "../styles/project.scss";
 import SEO from "../components/seo";
 
 const Project = ({ data }) => {
-  const { title, language, created_at, image, html_url } =
+  const { title, language, created_at, image, html_url, description } =
     data.markdownRemark.frontmatter;
+
   const html = data.markdownRemark.html;
   const img = getImage(image);
   const [openModal, setOpenModal] = useState(false);
 
   return (
     <Layout pageNr={"00"} title={title}>
-      <SEO title={title} />
+      <SEO title={title} description={description} />
       <div className="project">
         <div className="projectInfo">
           <div>{language}</div>
@@ -25,6 +26,7 @@ const Project = ({ data }) => {
           <a href={html_url}>GitHub link</a>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
+        <div style={{ color: "white" }}>{description}</div>
         <GatsbyImage
           image={img}
           alt={title}
@@ -60,6 +62,7 @@ export const query = graphql`
         language
         created_at
         html_url
+        description
         image {
           childImageSharp {
             gatsbyImageData(width: 800)

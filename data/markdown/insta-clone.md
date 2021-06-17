@@ -7,6 +7,7 @@ updated_at: "2021-02-13T19:38:05Z"
 size: 443
 language: "TypeScript"
 image: "../images/insta-clone.png"
+description: "What is insta-clone and why was it built"
 ---
 
 Insta clone is a clone of the one and only Instagram. This application was made for the sole purpose of getting to know graphql and typescript. Just the heads up, the project was also not finished due to the fact i had a bachelor's thesis to be finished, so all my time went there.
