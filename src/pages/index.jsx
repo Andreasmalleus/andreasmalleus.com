@@ -37,7 +37,7 @@ const Index = () => {
           </div>
           <StaticImage
             src={"../assets/hero.png"}
-            alt=""
+            alt="A black wall"
             className="hero-image"
             layout="fullWidth"
             quality={100}
