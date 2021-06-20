@@ -18,7 +18,11 @@ const Project = ({ data }) => {
 
   return (
     <Layout pageNr={"00"} title={title}>
-      <SEO title={title} description={description} />
+      <SEO
+        title={title}
+        description={description}
+        image={image.childImageSharp.gatsbyImageData.images.fallback.src}
+      />
       <div className="project">
         <div className="projectInfo">
           <div>{language}</div>

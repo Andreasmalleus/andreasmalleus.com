@@ -3,6 +3,8 @@ module.exports = {
     title: "Andreas Malleus Portfolio",
     description: "A personal portfolio",
     url: "https://andreasmalleus.com",
+    twitterUsername: "@sourcedub",
+    image: "/default.png",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -12,6 +14,13 @@ module.exports = {
       options: {
         name: `project`,
         path: `${__dirname}/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
       },
     },
     `gatsby-plugin-image`,
