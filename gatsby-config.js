@@ -33,5 +33,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://andreasmalleus.com",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 };
