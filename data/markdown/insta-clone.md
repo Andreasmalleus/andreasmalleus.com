@@ -10,9 +10,11 @@ image: "../images/insta-clone.png"
 description: "What is insta-clone and why was it built"
 ---
 
+## The project
+
 Insta clone is a clone of the one and only Instagram. This application was made for the sole purpose of getting to know graphql and typescript. Just the heads up, the project was also not finished due to the fact i had a bachelor's thesis to be finished, so all my time went there.
 
-Features
+## Features
 
 Authentication  
 The ability to create a post  
@@ -23,7 +25,7 @@ Image preview when the image is chosen
 Profile page with uploaded posts  
 Explore page with all the uploaded posts
 
-Built with
+## Built with
 
 [React](https://reactjs.org/)  
 [Node.js](https://nodejs.org/en/)  

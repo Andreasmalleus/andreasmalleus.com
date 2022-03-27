@@ -10,9 +10,11 @@ image: "../images/react-messenger.png"
 description: "What is react-messenger and why was it built?"
 ---
 
+## The project
+
 React-messenger is a messenging application made with React and is similar to messenger made by Facebook. The purpose of making this application was to get to know a little bit of socket.io and it's inner workings.
 
-Features
+## Features
 
 Authentication  
 The ability to send messages in the chat  
@@ -21,7 +23,7 @@ The ability to create the chat
 The ability to join the chat  
 The ability to leave the chat
 
-Built with
+## Built with
 
 [React](https://reactjs.org/)  
 [Node.js](https://nodejs.org/en/)  
