@@ -22,7 +22,7 @@ const Index = () => {
       <SEO />
       <CSSTransition
         in={transition}
-        timeout={1000}
+        timeout={2000}
         classNames="hero-image-transition"
         appear
         unmountOnExit
