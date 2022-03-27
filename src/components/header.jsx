@@ -11,10 +11,10 @@ const Header = ({ title, sortProjects }) => {
   const [visible, setVisible] = useState(true);
 
   const pages = [
+    "typeform-clone",
+    "insta-clone",
     "coronavirus-statistics",
     "react-messenger",
-    "insta-clone",
-    "typeform-clone",
   ];
 
   const navigateToProject = (isNext) => {
