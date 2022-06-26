@@ -5,6 +5,7 @@ module.exports = {
     url: "https://andreasmalleus.com",
     twitterUsername: "@sourcedub",
     image: "/default.png",
+    siteUrl: `https://www.andreasmalleus.com`,
   },
   plugins: [
     "gatsby-plugin-sass",
