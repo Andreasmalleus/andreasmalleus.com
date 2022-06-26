@@ -104,6 +104,8 @@ const Header = ({ title, sortProjects }) => {
               />
               <span> / </span>
               <CategoryButton category="html" sortProjects={sortProjects} />
+              <span> / </span>
+              <CategoryButton category="go" sortProjects={sortProjects} />
             </div>
           ) : pages.includes(title) ? (
             <div className="navigators">
